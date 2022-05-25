@@ -22,4 +22,13 @@ describe('ShoppingBasket', () => {
       expect(basket.getTotalPrice()).toEqual(12.97);
     })
   })
+
+  describe('getDiscount', () => {
+    it('applies a discount of £1 to a basket', () => {
+      basket = new ShoppingBasket();
+      basket.addItem(marsBar);
+      basket.applyDiscount(1);
+      expect(basket.getTotalPrice()).toEqual(3.99);
+    })
+  })
 })
