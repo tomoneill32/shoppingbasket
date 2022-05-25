@@ -1,6 +1,7 @@
 const ShoppingBasket = require('./shoppingbasket')
 
-const marsBar = { getPrice: () => '4.99' };
+const marsBar = { getPrice: () => 4.99 };
+const skittles = { getPrice: () => 3.99 };
 
 describe('ShoppingBasket', () => {
   describe('getTotalPrice', () => {
@@ -12,6 +13,13 @@ describe('ShoppingBasket', () => {
       basket = new ShoppingBasket();
       basket.addItem(marsBar);
       expect(basket.getTotalPrice()).toEqual(4.99);
+    })
+    it('returns the total value of three items added to the basket', () => {
+      basket = new ShoppingBasket();
+      basket.addItem(marsBar);
+      basket.addItem(skittles);
+      basket.addItem(skittles);
+      expect(basket.getTotalPrice()).toEqual(12.97);
     })
   })
 })

@@ -3,8 +3,8 @@ class ShoppingBasket {
     this.total = 0
   }
 
-  addItem() {
-    this.total += 4.99;
+  addItem(candy) {
+    this.total += candy.getPrice();
   }
 
   getTotalPrice() {
